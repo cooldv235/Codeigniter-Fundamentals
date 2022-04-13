@@ -3,7 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Crud_controller extends CI_Controller {
     public function index(){
+        $this->load->model('Crud_model','crud');
+
         $data['title'] = "Create of CRUD";
+        $data['users'] = $this->crud->fetch_data();
 
         $this->load->view("crud/templates/header");
         $this->load->view("crud/create",$data);
@@ -35,6 +38,19 @@ class Crud_controller extends CI_Controller {
     }
 
     public function inserted()
+    {
+        $this->index();
+    }
+
+    public function delete()
+    {
+        $id = $this->uri->segment(3);
+        $this->load->model('Crud_model','crud');
+        $this->crud->delete_record($id);
+        redirect(base_url() . "crud_controller/deleted");
+    }
+
+    public function deleted()
     {
         $this->index();
     }
