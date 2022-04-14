@@ -44,6 +44,24 @@
                 }
             })
         });
+
+        // SCRIPT TO CHECK EMAIL AVAILABILITY
+        $(document).ready(function(){
+            $('#email').change(function(){
+                const email = $('#email').val();
+
+                if(email != ''){
+                    $.ajax({
+                        url:"<?php echo base_url(); ?>checkemail_controller/check_email_availability",
+                        method:"POST",
+                        data:{email:email},
+                        success:function(data){
+                            $('#email_result').html(data);
+                        }
+                    })
+                }
+            })
+        });
     </script>
 </div>
 </body>

@@ -4,3 +4,5 @@ CREATE TABLE `ci`.`seven_user_login_creds` ( `id` INT(11) NOT NULL AUTO_INCREMEN
 
 CREATE TABLE `ci`.`eight_images_table` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
+CREATE TABLE `ci`.`nine_email_checker_table` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `email` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
