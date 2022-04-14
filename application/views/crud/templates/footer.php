@@ -37,7 +37,8 @@
                         success:function(data){
                             // console.log(data);
                             alert('Image Uploaded Successfully.');
-                            $('#upload_image').html(data);
+                            // $('#upload_image').html(data);
+                            location.reload();
                         }
                     });
                 }

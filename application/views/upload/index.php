@@ -8,6 +8,7 @@
     <input type="submit" value="Upload" id="upload" name="upload" class="btn btn-info">
 </form><br><br>
 
-<div id="upload_image">
+<div id="upload_image" class="row">
     <!-- UPLOADED IMAGE PLACED HERE -->
+    <?php echo $image_data; ?>
 </div>
