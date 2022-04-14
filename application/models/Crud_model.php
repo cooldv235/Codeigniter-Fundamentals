@@ -13,9 +13,22 @@ class Crud_model extends CI_Model {
         return $query;
     }
 
-    public function delete_record($id)
-    {
+    public function delete_record($id){
         $this->db->where('id',$id);
         $this->db->delete('six_create_ci_insert');
+    }
+
+    public function fetch_user($id){
+        $this->db->where('id',$id);
+        $query = $this->db->get('six_create_ci_insert');
+
+        return $query;
+    }
+
+    public function update_user($data,$id)
+    {
+        $this->db->where('id',$id);
+        $this->db->update('six_create_ci_insert',$data);
+        
     }
 }
